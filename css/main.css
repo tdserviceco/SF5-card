@@ -1,0 +1,281 @@
+@import './reset.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto+Slab&display=swap');
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  position: relative;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 640px;
+  transform: translate(-50%, -50%);
+  border: 3px solid black;
+  border-radius: 10px;
+  transition: border 250ms ease-in;
+  z-index: 4;
+  background: url('../img/street-fighter-v-ryu-artwork.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.card.card-active {
+  background: #fff;
+  border-top: 3px solid #33333361;
+  border-left: 3px solid #80808082;
+  border-right: 3px solid #80808080;
+  border-bottom: 3px solid #33333361;
+}
+
+#overlay-places {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: all 250ms ease-in;
+  overflow: hidden;
+  height: 250px;
+  position: relative;
+  ;
+}
+
+.card-holder {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.image-overlay.active {
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
+
+h1.active {
+  transition: all 250ms ease-in-out;
+  opacity: 1;
+  top: -90px;
+  border-top: 5px solid #80808080;
+  border-left: 5px solid #33333361;
+  background-color: #fff;
+  color: rgba(200, 0, 1, 0.8);
+}
+
+.skew.active {
+  transition: all 2s ease-in-out;
+  opacity: 1;
+}
+
+.skew {
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 95px 165px 0 0;
+  border-color: #000 transparent transparent transparent;
+}
+
+.non-skew {
+  position: absolute;
+  top: -80px;
+  left: 10px;
+}
+
+.non-skew>h5 {
+  color: #fff;
+  text-align: center;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  transform: scale(1.2);
+  height: 100%;
+  background: url('../img/ryu-profile-show.png') no-repeat;
+  opacity: 0;
+  filter: grayscale(1);
+  background-size: cover;
+}
+
+.image-overlay.active {
+  transform: scale(1);
+  filter: grayscale(0);
+  background-size: cover;
+}
+
+.image-overlay>img {
+  width: 100%;
+}
+
+#hashtag, #capcom-text, h1, .non-skew>h5, .information b {
+  font-weight: bold;
+}
+
+h1 {
+  opacity: 0;
+  font-size: 80px;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: -85px;
+  right: 0;
+  padding: 5px;
+  width: auto;
+  text-align: right;
+  background-color: transparent;
+  border-top-left-radius: 10px;
+  z-index: 5;
+}
+
+#hashtag {
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+
+#capcom-text {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.background-holder {
+  position: relative;
+}
+
+.capcom-logo {
+  width: 100%;
+  object-fit: cover;
+}
+
+.information {
+  opacity: 0;
+  padding: 10px;
+  text-align: right;
+  color: #000;
+}
+
+.information>b {
+  padding-right: 10px;
+}
+
+.information.active {
+  opacity: 1;
+  transition: all 500ms ease-in-out;
+  border-top: 5px solid #33333361;
+}
+
+.center {
+  text-align: center;
+}
+
+.copy {
+  position: absolute;
+  bottom: 0;
+  left: 310px;
+}
+
+.rows {
+  width: 90%;
+  margin: 0 auto;
+  transition: 500ms all ease-in;
+  opacity: 0;
+}
+
+.rows.active {
+  opacity: 1;
+}
+
+[class*="row-"] {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 50% 50%;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+[class*="row-"] b:first-child {
+  text-align: left;
+  color: #ce2029;
+}
+
+[class*="row-"] b {
+  color: #fff;
+  text-align: right;
+  padding-right: 10px;
+}
+
+[class*="row-"]:nth-child(even) {
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+[class*="row-"]:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ability-stats {
+  margin-top: 10px;
+}
+
+.ability-stats b{
+  color: #ce2029;
+  text-transform: uppercase;
+}
+
+.ability-stats span {
+  display: block;
+}
+
+.ability-stats .power-lenght,
+.ability-stats .health-lenght,
+.ability-stats .mobility-lenght,
+.ability-stats .technique-lenght,
+.ability-stats .range-lenght {
+  background-color: #ce2029;
+  height: 10px;
+  padding-top: 5px;
+  width: 0%;
+  transition: width 1s ease-in;
+}
+
+.power-lenght.active {
+  width: 90%; 
+}
+
+.health-lenght.active {
+  width: 80%;
+}
+
+.mobility-lenght.active {
+  width: 80%;
+}
+
+.technique-lenght.active {
+  width: 80%;
+}
+
+.range-lenght.active {
+  width: 60%;
+}
+
+
+
+.ability-row {
+  display: grid;
+  grid-gap: 29px;
+  grid-template-columns: 20% 80%;
+  margin: 10px 0;  
+}

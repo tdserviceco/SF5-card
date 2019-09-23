@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="./css/main.css" rel="stylesheet">
+  <title>Street fighter 5 card</title>
+</head>
+
+<body>
+  <div id="card" class="card" onmouseenter="activateAllEffect()" onmouseleave="returnToNormal()">
+    <div class="card-holder">
+      <div id="skew" class="skew">
+        <div id="non-skew" class="non-skew">
+          <h5>Enternal Wanderer</h5>
+        </div>
+      </div>
+      <div id="overlay-places">
+        <div id="activeImage" class="image-overlay">
+        </div>
+      </div>
+
+      <section class="background-holder">
+        <h1 id="title">RYU</h1>
+        <div id="information" class="information">
+          <b>HT 5'9 (175.26 cm)</b><b>WT 187 lbs (84.821 kg)</b>
+        </div>
+      </section>
+      <section id="stats" class="stats rows">
+        <div class="row-1">
+          <b>occupation</b><b>martial artist</b>
+        </div>
+        <div class="row-2">
+          <b>fight style</b><b>ansatsuken</b>
+        </div>
+        <div class="row-3">
+          <b>skills</b><b>can sleep anywhere</b>
+        </div>
+        <div class="ability-stats">
+          <div class="ability-row">
+            <b>power</b>
+            <span id="power-lenght" class="power-lenght"></span>
+          </div>
+          <div class="ability-row">
+            <b>health</b>
+            <span id="health-lenght" class="health-lenght"></span>
+          </div>
+          <div class="ability-row">
+            <b>mobility</b>
+            <span id="mobility-lenght" class="mobility-lenght"></span>
+          </div>
+          <div class="ability-row">
+            <b>technique</b>
+            <span id="technique-lenght" class="technique-lenght"></span>
+          </div>
+          <div class="ability-row">
+            <b>range</b>
+            <span id="range-lenght" class="range-lenght"></span>
+          </div>
+        </div>
+      </section>
+      <section class="copy">
+        <img class="capcom-logo" src="./img/Street-Fighter-V-logo.png" alt="Street fighter 5 card">
+        <h2 id="hashtag" class="center">#RiseUp</h2>
+        <h5 id="capcom-text" class="center">capcom u.s.a, inc </h5>
+      </section>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
